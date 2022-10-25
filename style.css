@@ -1,0 +1,163 @@
+:root{
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --botao-azul: #167BF7;
+    --cor-de-fundo: #00030c;
+    --fonte-principal: 'Inter';
+    --botao-azul-efeito: #328bf7;
+}
+/* Variáveis CSS auxiliam no entendimento do uso das cores por terem nomes que fazem sentido com o seu uso, consequentemente isso também facilita a atribuição nos elementos HTML. Além desses dois benefícios, facilita na manutenção do código: é possível alterar o valor de alguma cor reescrevendo um único lugar do código. */
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Quero que ele só tenha esses espaçamentos quando eu definir e não sozinho */
+/* esse seletor de asterisco pega todos os elementos HTML, ele seleciona todos eles e coloca um estilo que determinarmos ali. Ele não vai tão a fundo quanto o root. Então ele pega só os elementos, ele não define todo o arquivo CSS como o root. */
+
+.principal {
+    background-image: url("img/Background.png");
+    background-repeat: none; /*significa repetição do background*/
+    background-size: contain; /*para resolver o espaçamento da esquerda, altera o tamanho desse background. Assim ele vai pegar todo o container e vai preencher ele. E no caso o nosso container é a section*/
+    align-items: center; /*quando ele está no grid e que só definimos coluna, não definimos linha, ele vai alinhar ao centro dessa coluna*/
+    text-align: center; /*Ele funciona alinhando ao centro tudo o que está dentro de um elemento de bloco. Ou seja, aquela section que criamos para a primeira seção, por padrão ele veio com o display: block. Então esse text align alinhou tudo o que tem ali dentro, inclusive, a imagem. O código começa com um elemento de bloco (a div), ou seja, que tem display block, e há elementos dentro dele que são inline. Dessa maneira, usar a propriedade text-align na div permitirá alinhar para qualquer lado que você desejar os elementos filhos da div.*/
+}
+
+
+.container {
+    height: 100vh; /*Quando coloquei o vh para o height, ele significa /viewport height que seria a altura da tela do dispositivo. Ele vai detectar por causa daquele metadados que vimos no index.html qual é a altura dessa página e ele vai usar 100% por causa do 100vh.*/
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container__botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 1em;
+    color: var(--branco-principal);
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: 2px solid var(--branco-principal);
+}
+
+.container__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundario);
+}
+
+.container__titulo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.container__imagem {
+    margin: 1em 0 2em 0; /*sentido horário: cima, direita, baixo, esquerda. Margins realmente criam espaço ao redor do elemento e paddings criam dentro dele, ou seja, o padding afasta o conteúdo da borda e não um elemento do outro. Por fim, também podemos configurar valores diferentes para cada lado do elemento e, no vídeo, vimos diversas maneiras de fazer isso.*/
+}
+
+.container__caixa {
+    margin: 0 6em; /*cima-baixo e direita-esquerda*/
+}
+
+.secundario__imagem {
+    width: 80%;
+}
+
+.secundario {
+    align-items: center;
+    margin: 0 10em;
+}
+
+.descricao__titulo {
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--branco-principal);
+    margin-bottom: 0.1em;
+}
+
+.descricao__texto {
+    color: var(--cinza-secundario);
+}
+
+.secundario__botao {
+    display: inline-block; /*o inline transformou esse elemento em linha. Então se você colocasse outro elemento, ele ia ficar do lado desse "Assinar o Combo+". Mas como não tem, ele está ali só ocupando o espaço dele. E a melhor parte do block que ele pegou é que ele faz essa quebra de linha do texto de cima e também permitiria usarmos o width e o height. Ele permite mudar o tamanho desse botão. Mas só quisemos usar essa quebra de linha.*/
+    margin-top: 1em;
+}
+
+.container__descricao {
+    padding: 2em;
+}
+
+.dispositivos__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /*serve para tirar a bolinha da lista que vem por padrão quando usamos lista no html.*/
+    margin: 5em 0;
+}
+
+.dispositivos {
+    text-align: center;
+}
+
+.dispositivos__titulo {
+    font-size: 48px;
+    color: var(--branco-principal);
+}
+
+.lista__item {
+    font-size: 32px;
+    color: var(--branco-principal);
+
+}
+
+.rodape{
+    text-align: center;
+    margin: 5em 3em;
+}
+
+.rodape__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 1em;
+}
+
+.lista__link a{
+    /* Para funcionar o text-decoration: none você precisa aplicar diretamente na ancora, ou seja, o elemento <a>. Uma ideia pode ser colocar o seletor como .lista__link a, assim ele vai até o elemento com classe lista__link e entra nos elementos <a> dentro dele. */
+    text-decoration: none;
+    color: var(--branco-principal);
+    margin-left: 1em;
+}
+
+.rodape__texto {
+    color: var(--cinza-secundario);
+    margin: 1em 0;
+    font-size: 14px;
+}
+
+.lista__link a:hover {
+    color: var(--botao-azul);
+}
+
+.lista__link a:active {
+    color: purple;
+}
+
+.container__botao:hover {
+    background-color: var(--botao-azul-efeito);
+    color: var(--cor-de-fundo);
+}
+
+/* Hover, active e não sei o quê. São pseudoclasses do CSS e elas conseguem detectar a nossa interação com a tela. Quando clicamos ele usa o active. Tem o visit que é quando aquele link já foi visitado, já foi clicado. Tem o hover que usamos bastante que é quando passamos o mouse. Tem vários outros. */

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alura Plus</title> 
+        <!-- as tags meta são metadados. Estamos enviando dados codificados que o navegador vai entender e vai projetar na tela. -->
+        <meta charset="UTF-8">
+        <!-- O charset UTF-8 é porque não temos como monitorar de onde o usuário está entrando no nosso site. Então um dos principais é UTF-8, codificação de caracteres e ele vai aceitar todos os caracteres especiais, como o cedilha e os acentos que temos e não tem em todas as outras línguas. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- E esse meta name viewport identifica qual é o tamanho da tela dos dispositivos que você está usando. No content ele pega a largura do dispositivo e a escala inicial é 1. Só para ele entender se você está acessando pelo celular ou se está acessando com uma tela gigante, um monitor gamer. É isso que ele detecta para fazer a responsividade desse código. -->
+        <link rel="stylesheet" href="style.css">
+        <!-- A tag link faz esse linkar, essa conexão. É uma gíria que o pessoal usar que é linkar, mas é conectar outros arquivos com esse. E dentro do rel tenho o stylesheet que quer dizer que aquela importação é de uma folha de estilo. E o href é o endereço dela, que é o nome. Ela está na mesma pasta, então não tem um diretório diferente. Só precisamos informar o nome. -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@300;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+    <body> 
+        <section class="container principal">
+            <div class="container__caixa">
+                <h1 class="container__titulo">Com a Combo+, você pode aproveitar o Alura+ e o Alura Língua por um preço único.</h1>
+                <img src="img/Combo.png" alt="O combo+ é a junção do alura+ e o alura língua" class="container__imagem">
+                <a href="www.alura.com.br" class="container__botao">Assine por 12x de R$ 120,00*</a>
+                <a href="www.alura.com.br" class="container__botao botao_secundario">Assinar somente o Alura+</a>
+                <p class="container__aviso">*O preço pode variar caso a assinatura seja feito em outros planos</p>
+            </div>
+        </section>
+        <section class="container secundario">
+            <img src="img/Plataformas.png" alt="Um monitor e um celular com o alura plus aberto" class="secundario__imagem">
+            <div class="container__descricao"> <!-- porquê coloquei essa div? Coloquei uma div porque estamos reaproveitando da classe container o grid. Então se não colocássemos o h2 e o p dentro de uma caixa, ele ia interpretar que era para fazer a divisão de colunas com o img, h2 e o p. Ele ia buscar todos os elementos para fazer isso. Mas como colocamos eles na caixa do div, ele separou um lado para o img e um lado para o div e tudo aquilo que estava dentro foi junto. -->
+                <h2 class="descricao__titulo">Assista do seu jeito</h2>
+                <p class="descricao__texto">Aproveita a tela grande da TV ou assista no Tablet, Laptop, Celular e outros aparelhos. Nossa seleção de cursos não para de crescer.</p>
+            </div>
+        </section>
+        <section class="container secundario">
+            <div class="container__descricao">
+                <p class="descricao__texto">Só o Combo+ oferece Alura Plus e Alura Língua juntos para você ter acesso a cursos de diversas áreas de tecnologia e aprender ou espanhol onde e como quiser</p>
+                <a href="www.alura.com.br" class="container__botao secundario__botao">Assinar o Combo+</a>
+            </div>
+            <img src="img/Telas.png" alt="Tela da alura plus e do alura língua" class="secundario__imagem">
+        </section>
+        <section class="container secundario">
+            <img src="img/Notebook.png" alt="Notebook exibindo um curso da Alura" class="secundario__imagem">
+            <div class="container__descricao">
+                <h2 class="descricao__titulo">Baixe seus cursos</h2>
+                <p class="descricao__texto">Baixe e assista quando e onde quiser. Assim, seus favoritos estão sempre com você, até mesmo sem internet.</p>
+            </div>
+        </section>
+        <section class="dispositivos">
+            <h2 class="dispositivos__titulo">Disponível nos seus dispositivos favoritos.</h2>
+            <ul class="dispositivos__lista"> <!-- Colocamos um ul que é o pai da lista. Ele é o que abrange e toda a lista vai ficar dentro dele. Aí tem o ul e tem vários li dentro. E cada li é um item dessa lista e você coloca o que quiser dentro. Por exemplo, coloquei uma imagem e um h3 -->
+                <li>
+                    <img src="img/tv.png" alt="ícone de televisão">
+                    <h3 class="lista__item">TV</h3> <!-- Já coloquei h1, h2, h3, vai até onde esses tamanhos de títulos e subtítulos? No HTML vai até o h6. E é bem padrão em ordem de relevância na página. O h1 seria o título principal que foi o que coloquei lá naquela frase no início da página. O primeiro título que teve coloquei como h1 porque é importante sempre olhar a questão te ter um h1 só. Em seguida coloquei um h2 para cada título de seções porque eles não são os principais, mas continuam sendo título. Agora, por fim fui até o h3 porque esses também são títulos, são textos maiores. Mas não tem relevância na página como se fosse um subtítulo daquele h2. -->
+                </li>
+                <li>
+                    <img src="img/computador.png" alt="ícone de computador">
+                    <h3 class="lista__item">Computadores</h3>
+                </li>
+                <li>
+                    <img src="img/celular.png" alt="ícone de celular">
+                    <h3 class="lista__item">Celular e tablet</h3>
+                </li>
+            </ul>
+        </section>
+        <footer class="rodape">
+            <img src="img/Logo.png" alt="alura plus" class="rodape__logo">
+            <ul class="rodape__lista">
+                <li class="lista__link">
+                    <a href="#">Idioma</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Dispositivos Compatíveis</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Contrato de assinatura</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Política de Privacidade</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Proteção de Dados no Brasil</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Anúncios Personalizados</a>
+                </li>
+                <li class="lista__link">
+                    <a href="#">Ajuda</a>
+                </li>
+            </ul>
+            <p class="rodape__texto">* 2021 Alura, Alura+ e Alura Língua. Todos os direitos reservados. Serviço de assinatura paga. Conteúdo sujeito a disponibilidade.</p>
+            <p class="rodape__texto">Alura+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Alura+ é comercializado por Aovs Sistemas de Informática S.A., Rua Vergueiro, 3185 - Liberdade, São Paulo - SP, 04101-300, Brasil e CNPJ 05.555.352/0001-33</p>
+        </footer>
+    </body>
+</html>
